@@ -29,7 +29,7 @@ describe("Login Form", () => {
   })
 
 
-  it("button becomes enabled when terms are accepted", () => {
+  it("button are enabled when terms are accepted", () => {
     cy.visit("/")
 
     cy.get('input[name="email"]').type("test@test.com")
