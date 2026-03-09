@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -13,7 +13,7 @@ const initialForm = {
 export default function Login() {
   const [form, setForm] = useState(initialForm);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     let { name, value, type, checked } = event.target;
@@ -31,9 +31,9 @@ export default function Login() {
         );
         if (user) {
           setForm(initialForm);
-          history.push('/main');
+          navigate('/main');
         } else {
-          history.push('/error');
+          navigate('/error');
         }
       });
   };
